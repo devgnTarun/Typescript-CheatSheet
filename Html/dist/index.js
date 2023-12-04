@@ -22,4 +22,13 @@
 //     return a * b; //-------------------> Also we can fullfil its result , by assigning what to return like in syntax const multiply = (a:number , b:number) : number;
 // }
 // multiply(39, 988);
-// ----------------> Working with function in typescript <----------------------
+// ----------------> Working with arrays in typescript <----------------------
+const number = [10, 10, 10]; //Type number array, same in others
+const union = [10, 10, 10]; //Can be both string or number
+const checkByself = [10, 10, 10, 'string', false]; //Can be string, number an boolean
+const syntaxChange = []; //Type string array
+const syntaxChange2 = []; //Can be both
+// further for syntax 
+const syntaxIq100 = new Array(30);
+// topple, Defining per index type of array
+const array = [3, 4, 5, 'String'];

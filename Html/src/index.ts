@@ -37,4 +37,18 @@
 // multiply(39, 988);
 
 
-// ----------------> Working with function in typescript <----------------------
+// ----------------> Working with arrays in typescript <----------------------
+
+const number : number[]= [10, 10, 10 ]; //Type number array, same in others
+const union : string[] | number[] = [10, 10, 10]; //Can be both string or number
+const checkByself = [10, 10, 10 , 'string' , false]; //Can be string, number an boolean
+
+const syntaxChange: Array<string> = []; //Type string array
+const syntaxChange2: Array<number | string> = []; //Can be both
+
+// further for syntax 
+
+const syntaxIq100 : Array<number> = new Array(30)
+
+// topple, Defining per index type of array
+const array : [number , number,  number  , string] = [3, 4, 5 , 'String'];
