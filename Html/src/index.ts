@@ -18,5 +18,14 @@
 // let naam:string | number = 999;
 // let naam:string | number = false; ---------> But it can't be undefined, null or boolean 
 
+// console.log(naam);
 
-// console.log(nameLength);
+// ----------------> Working with function in typescript <----------------------
+
+const multiply = (a:number , b:number) => { //-------->This will take 2 number as paramterer a-b;
+    //----------------------------------> But we should tell if it is , number , string, booleon or anything
+    return console.log(a * b);
+    // return a * b; -------------------> Also we can fullfil its result , by assigning what to return like in syntax const multiply = (a:number , b:number) : number;
+}
+
+multiply(39, 988);
