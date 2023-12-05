@@ -131,4 +131,39 @@
 // const arrayPlus: ArrayFun = (...a:number[]) => {//Using spread operator and square brackets, let typescript know what is this
 //     return a.length;   
 // }
+
 // arrayPlus(40, 50, 60)
+
+
+// ----------------> Working with Funtions with objects * main * <----------------------
+
+// whenever creating ecommerce create interface too with as we create schema 
+
+// interface Transaction {
+//     id: string,
+//     by: string,
+//     to: string,  
+//     hash: number
+// };
+
+// //Use its interface which own double checks error
+// const addTransaction = (trasaction: Transaction) => {
+//     // trasaction.id === '456789o'; // You can edit this , without readonly
+//     return console.log(trasaction);
+// }
+// //Creating trasaction, using interface, so, i can't miss anything
+// const _trasaction: Transaction = {
+//     id: '1234567890',
+//     by: 'Tarun',
+//     to: "idk",
+//     hash: 987656789098765
+// };
+
+// addTransaction(_trasaction);
+
+
+// ---------> Type never in typescript
+
+// const throwError = () => {
+//     throw new Error(); // In this case , it will say function type is never because of throw keyword and also we are throwing err
+// }
