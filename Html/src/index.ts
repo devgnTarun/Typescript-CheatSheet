@@ -55,46 +55,80 @@
 
 // ----------------> Working with Objects in typescript <----------------------
 
-type obj1 = { //-------------------> Using type is okay, but interface helps to extend and copy other object fields
-    name: string,
-    age: number,
-    gender: string
-}
+// type obj1 = { //-------------------> Using type is okay, but interface helps to extend and copy other object fields
+//     name: string,
+//     age: number,
+//     gender: string
+// }
 
 // where as if i am using interface here, i can access another interface too, must check Synatax of both =
 
-interface obj2 {
-    name: string,
-    age: number,
-    gender?: string //------------> (?) question mark is used to make it optional
-}
+// interface obj2 {
+//     name: string,
+//     age: number,
+//     gender?: string //------------> (?) question mark is used to make it optional
+// }
 
-type FunctionType = (a: number, b: number) => void;
-interface obj3 extends obj2 { //-------------Here i can use fields of obj2 
-    func:  FunctionType;
-}
+// type FunctionType = (a: number, b: number) => void;
+// interface obj3 extends obj2 { //-------------Here i can use fields of obj2 
+//     func:  FunctionType;
+// }
 
-const objBoy: obj1 = {
-    name: 'John',
-    age: 15,
-    gender: 'Lgtv'
-}
+// const objBoy: obj1 = {
+//     name: 'John',
+//     age: 15,
+//     gender: 'Lgtv'
+// }
 
-const objGirls: obj3 = {
-    name: 'Annie',
-    age: 17,
-    func: (a, b) => {
-        console.log(a + b);
-   },
-}
+// const objGirls: obj3 = {
+//     name: 'Annie',
+//     age: 17,
+//     func: (a, b) => {
+//         console.log(a + b);
+//    },
+// }
 
-//Using function inside object
-const objIgtv: obj3 = {
-    name: 'Sammy',
-    age: 12,
-    func: (a, b) => {
-         console.log(a + b);
-    },
-}
+// //Using function inside object
+// const objIgtv: obj3 = {
+//     name: 'Sammy',
+//     age: 12,
+//     func: (a, b) => {
+//          console.log(a + b);
+//     },
+// }
 
-objIgtv.func(10, 10);
+// objIgtv.func(10, 10);
+
+
+// ----------------> Working with Funtions with types interface and parameter in typescript <----------------------
+
+// you can create this simple type for using it in function and use proper params with there type for code wellness and deciding what it will return according to us!
+// type FunPlus = (a :number , b:number , c? : number) => number;  // ? is for making it  optional
+
+// const plusThis:FunPlus = (a, b, c = 20) => { // (c = 20) is default value so, its not giving error, c must be probably undefined
+//     return a + b * c
+// }
+// plusThis(2, 3, 6)
+
+// ----------> Syntax without arrow function
+
+// function plusThis(a: number, b: number = 20): number {
+//     return a + b;
+// }
+
+// plusThis(3, 9);
+
+// type PlusType = (a: number, b?: number) => number;
+
+// const plus: PlusType = function plusThis(a, b = 20): number {
+//     return a + b;
+// }
+
+// Function dealing with array in parameters
+
+// type ArrayFun = (...a: number[]) => number;
+
+// const arrayPlus: ArrayFun = (...a:number[]) => {//Using spread operator and square brackets, let typescript know what is this
+//     return a.length;   
+// }
+// arrayPlus(40, 50, 60)
