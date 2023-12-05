@@ -1,0 +1,8 @@
+While using this in your IDE, follow this steps
+
+1. npm i -g typescript
+2. tsc -init
+3. Go to tsconfig
+4. And there convert , route dir to src ( Which means your main .ts file is there)
+5. Select output directory to dist, in which it make changes and compile in javascript.
+6. tsc -w
