@@ -171,42 +171,59 @@
 
 // ----------------> Working with Classes in typescript <----------------------
 
-class Pokemon {
-    name; //There are 3 keywords in typescript which is not in javascript (Public - By deafult, Private - Can't access object data outside class, Protected - Can't access data outside class , except subclass)
-    protected type;
-    stamina;
-    readonly id: string;// This id is immutable can't be changed, as it is readonly
-    constructor(name: string, type: string, stamina: number) {
-        this.name = name;
-        this.type = type;
-        this.stamina = stamina;
-        this.id = String(Math.random() * 100);
-    }
-    //In case we setted it private ... So we can access it like this
-    getStamina = () => { return this.stamina };
+// class Pokemon {
+//     name; //There are 3 keywords in typescript which is not in javascript (Public - By deafult, Private - Can't access object data outside class, Protected - Can't access data outside class , except subclass)
+//     protected type;
+//     stamina;
+//     readonly id: string;// This id is immutable can't be changed, as it is readonly
+//     constructor(name: string, type: string, stamina: number) {
+//         this.name = name;
+//         this.type = type;
+//         this.stamina = stamina;
+//         this.id = String(Math.random() * 100);
+//     }
+//     //In case we setted it private ... So we can access it like this
+//     getStamina = () => { return this.stamina };
+// }
+
+// class PokemonGrowth extends Pokemon {
+//     attackRate: number;
+//     constructor(name: string, type: string, stamina: number, attackRate: number) {
+//         super(name, type, stamina);
+//         this.attackRate = attackRate;
+//     }
+
+//     // Get and set function used in class
+//     get getType(): string {
+//         return this.type;
+//     }
+//     set setStamina(i:number) {
+//         this.stamina = i;
+//     }
+// }
+
+// const pikachu = new Pokemon('Pikachu', 'Electric', 90);
+// const raichu = new PokemonGrowth('Raichu', 'Electric', 100, 100)
+// console.log(pikachu.getStamina())
+// console.log(pikachu);
+// console.log(raichu);
+// raichu.setStamina = 120; //This is called after one raichu console, to check that its fine or not and also, not using () to call, sending value in = as paramter
+// console.log(raichu);
+// console.log(raichu.getType); // While using get like above in class. We don't need to use () this to call function;
+
+
+// Using class with interface 
+
+interface PokemonType {
+    name: string;
+    type: string;
+    stamina: number;
+    id: string;
 }
-
-class PokemonGrowth extends Pokemon {
-    attackRate: number;
-    constructor(name: string, type: string, stamina: number, attackRate: number) {
-        super(name, type, stamina);
-        this.attackRate = attackRate;
-    }
-
-    // Get and set function used in class
-    get getType(): string {
-        return this.type;
-    }
-    set setStamina(i:number) {
-        this.stamina = i;
-    }
+// **** Also we can use multiple types with one class
+class Pokemon implements PokemonType { //Using implement keyword to attach type with it 
+    id : string = String(Math.random() * 10);
+    constructor(public name : string, public type : string, public stamina : number ) { } // Providing them visibility like public, private or protected, make its syntax smaller
 }
-
-const pikachu = new Pokemon('Pikachu', 'Electric', 90);
-const raichu = new PokemonGrowth('Raichu', 'Electric', 100, 100)
-console.log(pikachu.getStamina())
-console.log(pikachu);
-console.log(raichu);
-raichu.setStamina = 120; //This is called after one raichu console, to check that its fine or not and also, not using () to call, sending value in = as paramter
-console.log(raichu);
-console.log(raichu.getType); // While using get like above in class. We don't need to use () this to call function;
+const squirtle = new Pokemon('Squirtel' , 'Water' , 200);
+console.log(squirtle);
