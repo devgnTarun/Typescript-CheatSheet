@@ -116,3 +116,35 @@
 // const throwError = () => {
 //     throw new Error(); // In this case , it will say function type is never because of throw keyword and also we are throwing err
 // }
+// ----------------> Working with Classes in typescript <----------------------
+class Pokemon {
+    constructor(name, type, stamina) {
+        //In case we setted it private ... So we can access it like this
+        this.getStamina = () => { return this.stamina; };
+        this.name = name;
+        this.type = type;
+        this.stamina = stamina;
+        this.id = String(Math.random() * 100);
+    }
+}
+class PokemonGrowth extends Pokemon {
+    constructor(name, type, stamina, attackRate) {
+        super(name, type, stamina);
+        this.attackRate = attackRate;
+    }
+    // Get and set function used in class
+    get getType() {
+        return this.type;
+    }
+    set setStamina(i) {
+        this.stamina = i;
+    }
+}
+const pikachu = new Pokemon('Pikachu', 'Electric', 90);
+const raichu = new PokemonGrowth('Raichu', 'Electric', 100, 100);
+console.log(pikachu.getStamina());
+console.log(pikachu);
+console.log(raichu);
+raichu.setStamina = 120; //This is called after one raichu console, to check that its fine or not and also, not using () to call, sending value in = as paramter
+console.log(raichu);
+console.log(raichu.getType); // While using get like above in class. We don't need to use () this to call function;
