@@ -214,16 +214,22 @@
 
 // Using class with interface 
 
-interface PokemonType {
-    name: string;
-    type: string;
-    stamina: number;
-    id: string;
-}
-// **** Also we can use multiple types with one class
-class Pokemon implements PokemonType { //Using implement keyword to attach type with it 
-    id : string = String(Math.random() * 10);
-    constructor(public name : string, public type : string, public stamina : number ) { } // Providing them visibility like public, private or protected, make its syntax smaller
-}
-const squirtle = new Pokemon('Squirtel' , 'Water' , 200);
-console.log(squirtle);
+// interface PokemonType {
+//     name: string;
+//     type: string;
+//     stamina: number;
+//     id: string;
+// }
+// // **** Also we can use multiple types with one class
+// class Pokemon implements PokemonType { //Using implement keyword to attach type with it 
+//     id : string = String(Math.random() * 10);
+//     constructor(public name : string, public type : string, public stamina : number ) { } // Providing them visibility like public, private or protected, make its syntax smaller
+// }
+// const squirtle = new Pokemon('Squirtel' , 'Water' , 200);
+// console.log(squirtle);
+
+// ----------------> Working with Type Assertion in typescript <---------------------- Usefull while submitting form in react/nextjs and in more cases, in layout.tsx and many
+
+// const btn = document.getElementById('link')! ; // Using this !null sign to change its property htmlelement from null
+// const btn =<HTMLButtonElement> document.getElementById('link') ; // Using specific html element name in this syntax
+// btn.formAction // If does not by default that it is achor and HTMLELEMENT - It know that it is null -- so do above thing
