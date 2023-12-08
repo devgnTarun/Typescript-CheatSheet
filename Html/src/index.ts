@@ -237,14 +237,40 @@
 
 // Working with forms 
 
-const form = document.querySelector('#writable') as HTMLFormElement;
-const valueTxt = <HTMLInputElement>document.querySelector('form > input');
-let writableString = document.getElementById('writeOn')!;
+// const form = document.querySelector('#writable') as HTMLFormElement;
+// const valueTxt = <HTMLInputElement>document.querySelector('form > input');
+// let writableString = document.getElementById('writeOn')!;
 
 
-form.onsubmit = (e) => {
-    e.preventDefault();
-    const value = String(valueTxt.value);
-    writableString.textContent = value;
-    //Editing dom with form
+// form.onsubmit = (e) => {
+//     e.preventDefault();
+//     const value = String(valueTxt.value);
+//     writableString.textContent = value;
+//     //Editing dom with form
+// }
+
+//Understanding more in deep 
+
+interface Pokemon {
+    name: string,
+    power: number,
+    type: string
 }
+
+const pikachu: Pokemon = {
+    name: 'Pikachu',
+    power: 200,
+    type: " Elcetric"
+}
+
+function getPikachuKeyData(key: keyof Pokemon) { // Key of keyword helps to fetch any data inside of object with using interface
+    console.log(pikachu[key]);
+}
+getPikachuKeyData('name')
+
+// But what if we are using outside library
+
+// then refer to your object which you are creating
+
+const key = "name";
+pikachu[key as keyof typeof pikachu]; // Key that is name as, key of, mtlb ki key hoyegi, kiski? refrence to object of pikachu!
