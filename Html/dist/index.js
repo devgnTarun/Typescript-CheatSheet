@@ -170,4 +170,15 @@
 // ----------------> Working with Type Assertion in typescript <---------------------- Usefull while submitting form in react/nextjs and in more cases, in layout.tsx and many
 // const btn = document.getElementById('link')! ; // Using this !null sign to change its property htmlelement from null
 // const btn =<HTMLButtonElement> document.getElementById('link') ; // Using specific html element name in this syntax
-// btn.formAction // If does not by default that it is achor and HTMLELEMENT - It know that it is null -- so do above thing
+// const btn =document.getElementById('link') as HTMLElement ; // Another clear syntax of using it
+// btn.oncancel // If does not by default that it is achor and HTMLELEMENT - It know that it is null -- so do above thing
+// Working with forms 
+const form = document.querySelector('#writable');
+const valueTxt = document.querySelector('form > input');
+let writableString = document.getElementById('writeOn');
+form.onsubmit = (e) => {
+    e.preventDefault();
+    const value = String(valueTxt.value);
+    writableString.textContent = value;
+    //Editing dom with form
+};
