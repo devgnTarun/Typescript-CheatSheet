@@ -1,15 +1,12 @@
 "use strict";
 // Datatypes Ts
-const pikachu = {
-    name: 'Pikachu',
-    power: 200,
-    type: " Elcetric"
+const charizad = {
+    name: 'Charizad',
+    power: 200
 };
-function getPikachuKeyData(key) {
-    console.log(pikachu[key]);
-}
-getPikachuKeyData('name');
-// But what if we are using outside library
-// then refer to your object which you are creating
-const key = "name";
-pikachu[key]; // Key that is name as, key of, mtlb ki key hoyegi, kiski? refrence to object of pikachu!
+//Using <value> like this can make this function smart, then using any. As function will know, jo agr aayega parameter vich oohi jayega, and jo jayega. oste method according to it call ho payega.
+const showPokemon = (p) => {
+    return p;
+};
+//Basic generix syntax
+const myPokemon = showPokemon(charizad);

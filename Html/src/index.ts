@@ -251,26 +251,49 @@
 
 //Understanding more in deep 
 
+// interface Pokemon {
+//     name: string,
+//     power: number,
+//     type: string
+// }
+
+// const pikachu: Pokemon = {
+//     name: 'Pikachu',
+//     power: 200,
+//     type: " Elcetric"
+// }
+
+// function getPikachuKeyData(key: keyof Pokemon) { // Key of keyword helps to fetch any data inside of object with using interface
+//     console.log(pikachu[key]);
+// }
+// getPikachuKeyData('name')
+
+// // But what if we are using outside library
+
+// // then refer to your object which you are creating
+
+// const key = "name";
+// pikachu[key as keyof typeof pikachu]; // Key that is name as, key of, mtlb ki key hoyegi, kiski? refrence to object of pikachu!
+
+
+// ----------------> Working with Type utility in typescript <---------------------- 
+
+// Read documentation for better understanding this
+
+// ----------------> Working with Generics in typescript <---------------------- 
+
 interface Pokemon {
     name: string,
-    power: number,
-    type: string
+    power: number
 }
 
-const pikachu: Pokemon = {
-    name: 'Pikachu',
-    power: 200,
-    type: " Elcetric"
+const charizad: Pokemon = {
+    name: 'Charizad',
+    power: 200
 }
-
-function getPikachuKeyData(key: keyof Pokemon) { // Key of keyword helps to fetch any data inside of object with using interface
-    console.log(pikachu[key]);
+//Using <value> like this can make this function smart, then using any. As function will know, jo agr aayega parameter vich oohi jayega, and jo jayega. oste method according to it call ho payega.
+const showPokemon = <T>(p: T): T => {
+    return p;
 }
-getPikachuKeyData('name')
-
-// But what if we are using outside library
-
-// then refer to your object which you are creating
-
-const key = "name";
-pikachu[key as keyof typeof pikachu]; // Key that is name as, key of, mtlb ki key hoyegi, kiski? refrence to object of pikachu!
+//Basic generix syntax
+const myPokemon = showPokemon<Pokemon>(charizad);
